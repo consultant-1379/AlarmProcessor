@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+    <defaultProtocol type="Servlet 3.0" />
+
+    <engine>
+        <property name="deploymentExportPath">target/arquillian</property>
+    </engine>
+
+    <container qualifier="jboss_managed_local" default="true">
+        <configuration>
+            <property name="jbossHome">${jboss.home}</property>
+            <property name="serverConfig">standalone-full.xml</property>
+            <property name="startupTimeoutInSeconds">600</property>
+            <property name="javaVmArguments">${jboss.jvm_args}
+                -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
+                -Djboss.socket.binding.port-offset=600
+                -Djboss.node.name=FM-SERV-JEE-TEST
+                -Dcom.ericsson.oss.sdk.node.identifier=FM-SERV-JEE-TEST
+                -Dorg.jboss.as.logging.per-deployment=false
+                -Dcom.ericsson.oss.sdk.tracing.autoannotate=off
+                -Dcom.ericsson.oss.itpf.sdk.cache.statistic=off
+                -Djboss.messaging.group.address=232.2.1.19
+                -Djboss.messaging.group.port=7929
+                -Dsfwk.upgrade.udp.mcast_addr=231.1.2.19
+                -Dsfwk.healthcheck.udp.mcast_addr=231.1.2.19
+                -Dsfwk.config.property.change.notifications.udp.mcast_addr=231.1.2.19
+                -Dsfwk.config.udp.mcast_addr=231.1.2.19
+                -Dsfwk.eservice.udp.mcast_addr=231.1.2.19
+                -Dsfwk.service.availability.udp.mcast_addr=231.1.2.19
+                -Dsdk.jgroups.distributed.udp.mcast_addr=231.1.2.19
+                -Dcom.ericsson.oss.sdk.config.properties.polling.period=15000
+                -Dericsson-model-service-root=${modelRoot}
+                -Ddatapath.dir=src/test/resources/jboss_settings/models
+                -DdataPersistence.cache.persist.disabled=true
+                -Djboss.tx.node.id=APS-MC-JEE-TEST
+                -Dcom.ericsson.oss.services.eps.module.deployment.folder.path=src/test/resources/flows
+                -Dcom.ericsson.oss.itpf.sdk.cache.persistence.location.absolute.path=${basedir}/target/cache-persistence
+                -Dcom.ericsson.oss.services.eps.module.cdi.enabled=true
+                -DXML_REPO_PATH=${basedir}/target/deployed-model/modelRepo.xml
+                -Dversant.connectionPoolSize=200
+                -Djava.net.preferIPv4Stack=true
+                -Dneo4j.server.credentials=${jboss.home}/standalone/data/dps/credentials/neo4j.properties
+                -Dneo4j.serverTransport=bolt
+                -Dneo4j.server.hostname=localhost
+                -Dneo4jIdBlockSize=1000
+                -Dneo4j.bolt.encryption=false
+                -Djboss.management.native.port=10590
+            </property>
+            <!-- incremented by 600 from 9999 -->
+            <property name="managementPort">10590</property>
+        </configuration>
+    </container>
+</arquillian>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+******************************************************************************
+* COPYRIGHT Ericsson LMI 2017. All rights reserved.
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+******************************************************************************
+-->
+<CapabilitySupportDefinition oss_common:ns="BSC"
+    oss_common:name="FMFunctions" oss_common:version="1.0.0"
+    oss_common:lifeCycle="CURRENT"
+    xmlns="urn:com:ericsson:schema:xml:oss:oss_capabilitysupport"
+    xmlns:oss_common="urn:com:ericsson:schema:xml:oss:oss_common"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <oss_common:modelCreationInfo author="xjeenar"
+        creationDate="28/12/2017">
+        <oss_common:designedModel componentId="bsc-node-model-common" />
+    </oss_common:modelCreationInfo>
+
+    <oss_common:desc>FM Capability Support for BSC node target type</oss_common:desc>
+
+    <capability name="alarmTranslationConversionRulePath" value="/ericsson/tor/data/fm/axefmmediationengine/data/NeSpecificConversionRules.json" />
+
+</CapabilitySupportDefinition>

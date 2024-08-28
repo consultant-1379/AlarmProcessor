@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ *******************************************************************************
+ * COPYRIGHT Ericsson 2022
+ *
+ * The copyright to the computer program(s) herein is the property of
+ * Ericsson Inc. The programs may be used and/or copied only with written
+ * permission from Ericsson Inc. or in accordance with the terms and
+ * conditions stipulated in the agreement/contract under which the
+ * program(s) have been supplied.
+ *******************************************************************************
+ -->
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+</web-app>

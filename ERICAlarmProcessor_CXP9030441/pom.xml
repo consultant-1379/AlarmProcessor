@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>AlarmProcessor</artifactId>
+        <groupId>com.ericsson.nms.services</groupId>
+        <version>1.226.2-SNAPSHOT</version>
+    </parent>
+    <artifactId>ERICAlarmProcessor_CXP9030441</artifactId>
+    <packaging>${rpm.packaging}</packaging>
+
+    <name>[${project.parent.artifactId}] CXP module</name>
+    <properties>
+        <com.ericsson.oss.rpm.architecture>noarch</com.ericsson.oss.rpm.architecture>
+        <!-- Install path = /${rpm-root}/${comp-name}/${install-path} -->
+        <rpm-root>opt</rpm-root>
+        <comp-name>ericsson</comp-name>
+        <install-path>${project.groupId}.AlarmProcessor</install-path>
+        <publish_artifact>true</publish_artifact>
+        <media.category>service</media.category>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.ericsson.nms.services</groupId>
+            <artifactId>AlarmProcessor-ear</artifactId>
+            <version>${project.version}</version>
+            <type>ear</type>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <release>1</release>
+                    <skip>true</skip>
+                    <inherited>true</inherited>
+                    <copyright>${this.year} Ericsson AB. All rights reserved</copyright>
+                    <summary>${stripped.artifactId}</summary>
+                    <packager>${ericsson.rstate}</packager>
+                    <group>ERI-NMS</group>
+                    <requires>
+                        <require>python &gt;= 2.6</require>
+                    </requires>
+                    <vendor>Ericsson AB</vendor>
+                    <url>www.ericsson.com</url>
+                    <mappings>
+                        <mapping>
+                            <directory>${vm.install-path}</directory>
+                            <filemode>550</filemode>
+                            <username>${jboss-username}</username>
+                            <groupname>${jboss-groupname}</groupname>
+                            <directoryIncluded>false</directoryIncluded>
+                            <recurseDirectories>false</recurseDirectories>
+                            <dependency>
+                                <includes>
+                                    <include>${project.groupId}:${project.parent.artifactId}-ear</include>
+                                </includes>
+                            </dependency>
+                        </mapping>
+                    </mappings>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

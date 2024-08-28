@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2016. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+
+
+--><ns2:PrimaryTypeDefinition xmlns:ns1="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:ns2="urn:com:ericsson:schema:xml:oss:dps_primarytype" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" hierarchyType="HIERARCHICAL" inheritanceQualifier="ABSTRACT" ns1:lifeCycle="CURRENT" ns1:name="Supervision" ns1:ns="MEDIATION" ns1:version="1.0.0">
+  <ns1:modelCreationInfo author="cdsadm100" creationDate="Mon Jul 25 23:11:20 CEST 2016">
+    <ns1:designedModel className="com.ericsson.oss.mediation.model.eai.Supervision_100" componentId="mediation-service-model-jar"/>
+  </ns1:modelCreationInfo>
+  <ns1:desc>This MO is the common super-type for all Supervision types.</ns1:desc>
+  <ns2:primaryTypeAttribute immutable="false" key="false" mandatory="true" ns1:lifeCycle="CURRENT" ns1:name="active" sensitive="false">
+    <ns1:desc>Indicates if the supervision function is enabled or disabled for the selected Network Element.</ns1:desc>
+    <ns1:type xsi:type="ns1:booleanType">
+      <ns1:notNullConstraint/>
+    </ns1:type>
+    <ns1:default value="false" xsi:type="ns1:booleanValue"/>
+    <ns2:changeEventHandling onCreatePo="" onDeletePo="" onModifyAttr="VALUE"/>
+  </ns2:primaryTypeAttribute>
+  <ns2:changeEventHandling onCreateAssoc="" onCreatePo="VALUES NAMES" onDeleteAssoc="" onDeletePo="VALUES NAMES" onModifyAttr=""/>
+</ns2:PrimaryTypeDefinition>

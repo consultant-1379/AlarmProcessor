@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+##
+## Copyright (c) Ericsson AB, 2012.
+##
+## All Rights Reserved. Reproduction in whole or in part is prohibited
+## without the written consent of the copyright owner.
+##
+## ERICSSON MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+## SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING
+## BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+## FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. ERICSSON
+## SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A
+## RESULT OF USING, MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS
+## DERIVATIVES.
+##
+##
+##
+-->
+<entityTypesFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///opt/cba_dx/coremw_sdk/schemas/SAI-AIS-SMF-ETF-A.01.02_OpenSAF.xsd" name="ERIC-${project.artifactId}-${project.version}-1" provider="ERIC">
+    <AmfEntityType>
+        <AppType name="safAppType=ERIC-war" version="safVersion=1.0.0">
+            <serviceGroupType name="safSgType=ERIC-war-service" version="safVersion=1.0.0"></serviceGroupType>
+        </AppType>
+    </AmfEntityType>
+    <AmfEntityType>
+        <SGType name="safSgType=ERIC-war-service" version="safVersion=1.0.0">
+            <suType name="safSuType=ERIC-war-service" version="safVersion=1.0.0" />
+            <redModel>SA_AMF_N_WAY_ACTIVE_REDUNDANCY_MODEL</redModel>
+        </SGType>
+    </AmfEntityType>
+    <AmfEntityType>
+        <SUType name="safSuType=ERIC-war-service" version="safVersion=1.0.0">
+            <componentType name="safCompType=ERIC-war-service" version="safVersion=1.0.0">
+            </componentType>
+            <providesServiceType name="safSvcType=ERIC-war-service" version="safVersion=1.0.0">
+            </providesServiceType>
+        </SUType>
+    </AmfEntityType>
+    <AmfEntityType>
+        <CompType name="safCompType=ERIC-war-service" version="safVersion=1.0.0">
+            <providesCSType name="safCSType=ERIC-war-service" version="safVersion=1.0.0">
+                <oneactive />
+            </providesCSType>
+            <unproxiedNonSaAware>
+                <instantiateCmd>
+                    <command>../bin/true</command>
+                    <args>start</args>
+                </instantiateCmd>
+                <terminateCmd>
+                    <command>../bin/true</command>
+                    <args>stop</args>
+                </terminateCmd>
+                <cleanupCmd>
+                    <command>../bin/true</command>
+                    <args>stop</args>
+                </cleanupCmd>
+            </unproxiedNonSaAware>
+            <osafHcCmd>
+               <command>/bin/true</command>
+                  <args>status</args>
+               </osafHcCmd>
+            <bundleReference name="safSmfBundle=ERIC-${project.artifactId}-${project.version}-1" />
+        </CompType>
+    </AmfEntityType>
+    <AmfEntityType>
+        <CSType name="safCSType=ERIC-war-service" version="safVersion=1.0.0" />
+    </AmfEntityType>
+    <AmfEntityType>
+        <ServiceType name="safSvcType=ERIC-war-service" version="safVersion=1.0.0">
+            <csType name="safCSType=ERIC-war-service" version="safVersion=1.0.0" />
+        </ServiceType>
+    </AmfEntityType>
+    <swBundle name="safSmfBundle=ERIC-${project.artifactId}-${project.version}-1">
+	  <removal>
+            <offline>
+                <command>offline-remove.sh</command>
+                <args />
+                <serviceUnit />
+            </offline>
+            <online>
+                <command />
+                <args />
+            </online>
+        </removal>
+        <installation>
+            <offline>
+                <command>offline-install.sh</command>
+                <args />
+                <serviceUnit />
+            </offline>
+            <online>
+                <command />
+                <args />
+            </online>
+        </installation>				        
+    </swBundle>
+</entityTypesFile>

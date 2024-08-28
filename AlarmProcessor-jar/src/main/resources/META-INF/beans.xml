@@ -1,0 +1,9 @@
+<beans xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://jboss.org/schema/cdi/beans_1_0.xsd" >
+   <interceptors>
+		<class>com.ericsson.oss.itpf.sdk.cache.interceptor.ServiceFrameworkCacheResultInterceptor</class>
+		<class>com.ericsson.oss.itpf.sdk.cache.interceptor.ServiceFrameworkCachePutInterceptor</class>
+		<class>com.ericsson.oss.itpf.sdk.cache.interceptor.ServiceFrameworkCacheRemoveEntryInterceptor</class>
+		<class>com.ericsson.oss.itpf.sdk.cache.interceptor.ServiceFrameworkCacheRemoveAllInterceptor</class>
+	</interceptors>
+</beans>

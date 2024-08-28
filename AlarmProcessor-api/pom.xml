@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>AlarmProcessor</artifactId>
+        <groupId>com.ericsson.nms.services</groupId>
+        <version>1.226.2-SNAPSHOT</version>
+    </parent>
+    <artifactId>AlarmProcessor-api</artifactId>
+    <name>[${project.parent.artifactId}] API module</name>
+
+    <properties>
+        <version.javax.validation>1.0.0.GA</version.javax.validation>
+        <sonar.tests>src/test/java</sonar.tests>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <!-- Ignore maven-enforcer-plugin in eclipse -->
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-enforcer-plugin</artifactId>
+                                        <versionRange>[1.0,)</versionRange>
+                                        <goals>
+                                            <goal>enforce</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore />
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies>
+        <!-- DO NOT DELETE THIS DEPENDENCY. IT CONTAINS SERVICE FRAMEWORK ANNOTATION PROCESSORS AND IS REQUIRED TO AUTOMATICALLY GENERATE ARTIFACTS REQUIRED
+            BY SERVICE FRAMEWORK. -->
+        <!-- <dependency> <groupId>com.ericsson.oss.itpf.sdk</groupId> <artifactId>sdk-maven-plugin</artifactId> <scope>provided</scope> </dependency> -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-core-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-cache-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.itpf.sdk</groupId>
+            <artifactId>sdk-config-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.services.fm.models</groupId>
+            <artifactId>fmmediationeventmodel-jar</artifactId>
+            <version>${version.fmmediationeventmodel}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ericsson.oss.services.fm.models</groupId>
+            <artifactId>fmprocessedeventmodel-jar</artifactId>
+            <version>${version.fmprocessedeventmodel}</version>
+        </dependency>
+    </dependencies>
+</project>

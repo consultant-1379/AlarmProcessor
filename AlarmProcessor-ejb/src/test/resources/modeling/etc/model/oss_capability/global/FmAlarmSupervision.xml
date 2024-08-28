@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+*******************************************************************************
+* COPYRIGHT Ericsson LMI 2014. All rights reserved.
+*
+* No part of this document may be reproduced in any form without the
+* written permission of the copyright owner.The contents of this document
+* are subject to revision without notice due to continued progress in
+* methodology, design and manufacturing. Ericsson shall have no liability
+* for any error or damage of any kind resulting from the use of this document.
+*
+*******************************************************************************
+--><pte:PrimaryTypeExtensionDefinition xmlns:oss_common="urn:com:ericsson:schema:xml:oss:oss_common" xmlns:pt="urn:com:ericsson:schema:xml:oss:dps_primarytype"
+       xmlns:pte="urn:com:ericsson:schema:xml:oss:dps_primarytype_ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" oss_common:ns="OSS_NE_FM_DEF"
+       oss_common:name="FmAlarmSupervision" oss_common:version="1.1.0">
+       <oss_common:modelCreationInfo author="eparrra" creationDate="Mon Mar 02 16:59:45 GMT 2015">
+              <oss_common:designedModel componentId="alarmpersistencemodel-jar" />
+       </oss_common:modelCreationInfo>
+       <oss_common:desc>A dps_primaryType_ext model used to show the Supervision status of node in GUI
+       </oss_common:desc>
+       <oss_common:extendedModelElement urn="//OSS_NE_FM_DEF/FmAlarmSupervision/1.1.0" />
+
+       <pte:primaryTypeExtension>
+              <pte:changeEventHandling channelUrn="//global/FmSupervisonStatusChannel" />
+       </pte:primaryTypeExtension>
+
+</pte:PrimaryTypeExtensionDefinition>

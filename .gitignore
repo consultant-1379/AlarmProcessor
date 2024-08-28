@@ -1,0 +1,16 @@
+/.settings
+/.project
+/.classpath
+/target
+AlarmProcessor-ear/target
+.pmd
+AlarmProcessor-ear/.project
+AlarmProcessor-ear/.settings/
+testsuite/integration/jee/CosServices.cfg
+testsuite/integration/node-model-common/target
+#IntelliJ files
+.idea
+*.iml
+*.eml
+*.orig
+.checkstyle

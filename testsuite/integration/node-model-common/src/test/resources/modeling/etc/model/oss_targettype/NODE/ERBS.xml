@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TargetTypeInformation
+      oc:ns="NODE"
+      oc:name="ERBS"
+      xmlns:oc="urn:com:ericsson:schema:xml:oss:oss_common"
+      xmlns="urn:com:ericsson:schema:xml:oss:oss_targettype"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <oc:modelCreationInfo author="eotilid"	creationDate="24th September 2015">
+      <oc:designedModel componentId="ERBS NODE MODEL"/>
+   </oc:modelCreationInfo>
+
+   <oc:desc>This is the target type information model for Network Element type "ERBS".</oc:desc>
+
+   <platform>CPP</platform>
+   <ciMoType namespace="CPP_MED" name="CppConnectivityInformation" />
+
+</TargetTypeInformation>

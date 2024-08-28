@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityDefinition
+        oss_common:ns="global"
+        oss_common:name="FMFunctions"
+        xmlns="urn:com:ericsson:schema:xml:oss:oss_capability"
+        xmlns:oss_common="urn:com:ericsson:schema:xml:oss:oss_common"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <oss_common:modelCreationInfo author="egispia" creationDate="04/08/2016">
+        <oss_common:designedModel componentId="FM Functions Capabilities"/>
+    </oss_common:modelCreationInfo>
+
+    <oss_common:desc>This is the FM Functions Capability model</oss_common:desc>
+
+    <capability name="alarmSyncSupport"
+                type="BOOLEAN"
+                default="true">
+        <desc>This flag is used to specify if the target type supports alarm reporting on synchronization request</desc>
+    </capability>
+
+    <capability name="supportsAck"
+                type="BOOLEAN"
+                default="false">
+        <desc>This flag is used to specify if the target type supports alarm acknowledge on user request</desc>
+    </capability>
+
+    <capability name="supportsUnack"
+                type="BOOLEAN"
+                default="false">
+        <desc>This flag is used to specify if the target type supports alarm unacknowledge on user request</desc>
+    </capability>
+
+    <capability name="supportsClear"
+                type="BOOLEAN"
+                default="false">
+        <desc>This flag is used to specify if the target type supports alarm clear on user request</desc>
+    </capability>
+
+    <capability name="alarmTranslationConversionRulePath"
+                type="STRING"
+                default="">
+        <desc>Capability definition for Alarm translation map conversion rule file path</desc>
+    </capability>
+
+    <capability name="multiLevelCSStateHandling"
+                type="BOOLEAN"
+                default="false">
+        <desc>Capability definition for considering CurrentService state handling at both server and blade level</desc>
+    </capability>
+
+    <capability name="bladeLevelFunctionMo"
+                type="STRING"
+                default="">
+        <desc>Capability definition for considering CurrentService state handling at both server and blade level</desc>
+    </capability>
+
+    <capability name="cpLevelFunctionMo"
+                type="STRING"
+                default="">
+        <desc>Capability definition for considering CurrentService state handling at both server and blade level</desc>
+    </capability>
+
+    <capability name="supervisionSupport"
+                type="BOOLEAN"
+                default="true">
+        <desc>Capability definition for specify if the target type supports supervision functionality</desc>
+    </capability>
+
+    <capability name="OpiSupportComponent"
+                type="BOOLEAN"
+                default="false">
+        <desc>Capability definition for considering CurrentService state handling at both server and blade level for OPI</desc>
+    </capability>
+
+    <capability name="snmpAlarms"
+                type="STRING"
+                default="">
+        <desc>Capability definition for SNMP Alarms </desc>
+    </capability>
+
+    <capability name="axeAlarms"
+                type="STRING"
+                default="">
+        <desc>Capability definition for AXE Alarms</desc>
+    </capability>
+
+    <capability name="cpComponent"
+                type="STRING"
+                default="">
+        <desc>Capability definition for Cluster Alarms</desc>
+    </capability>
+
+    <capability name="errorMessageSyncSupport"
+                type="BOOLEAN"
+                default="false">
+        <desc>Capability definition for specify if the target type supports error messages synchronization</desc>
+    </capability>
+
+    <!-- Capability definition for supported FM components-->
+    <complexCapability oss_common:name="axeComponent" endUserOverridable="false" overridable="FOR_TARGET_TYPE">
+        <oss_common:desc>Capability definition for Supported FM components</oss_common:desc>
+        <oss_common:type xsi:type="oss_common:mapType">
+            <oss_common:collectionValuesType xsi:type="oss_common:stringType"/>
+            <oss_common:keyValuesType xsi:type="oss_common:stringType"/>
+        </oss_common:type>
+        <!-- Default values null-->
+    </complexCapability> 
+
+    <!-- Capability definition for supported FM components-->
+    <complexCapability oss_common:name="snmpComponent" endUserOverridable="false" overridable="FOR_TARGET_TYPE">
+        <oss_common:desc>Capability definition for Supported FM components</oss_common:desc>
+        <oss_common:type xsi:type="oss_common:mapType">
+            <oss_common:collectionValuesType xsi:type="oss_common:stringType"/>
+            <oss_common:keyValuesType xsi:type="oss_common:stringType"/>
+        </oss_common:type>
+        <!-- Default values null-->
+    </complexCapability> 
+</CapabilityDefinition>
